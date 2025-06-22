@@ -25,7 +25,7 @@
     <div id="layout-menu">
         <a href="#course_introduction">教育背景</a>
         <a href="#education_and_work_experience">获奖荣誉</a>
-        <a href="#research_direction">研究方向</a>
+        <a href="#research_direction">项目经历</a>
 		<a href="#individual_ability">个人技能</a>
         <a href="#research_project">研究项目</a>
         <a href="#publications_and_patents">学术论文</a>
@@ -64,13 +64,13 @@
         <h2>教育背景</h2>
         <ul>
 			<li>
-				2023.08~至今 中国海洋大学 信息科学与工程学部 人工智能专业 博士学习
+				2023.08~至今 中国海洋大学 信息科学与工程学部 人工智能专业 博士
             </li>
 			<li>
-                2020.08~2023.06 中国海洋大学 信息科学与工程学部 计算机应用技术专业 硕士学习 <br>
+                2020.08~2023.06 中国海洋大学 信息科学与工程学部 计算机应用技术专业 硕士 <br>
             </li>
             <li>
-                2015.09~2019.06 青岛大学 机电工程学院 测控技术与仪器专业 本科学习<br>
+                2015.09~2019.06 青岛大学 机电工程学院 测控技术与仪器专业 本科<br>
             </li>
         </ul>
     </div>
@@ -88,11 +88,37 @@
         </ul>
     </div>
 	<div id="research_direction">
-		<h2>研究方向</h2>
+		<h2>项目经历</h2>
 		<ul>
 			<li>
-				多模态大型语言模型、视频理解、人员行为识别、单目/跨摄像头多目标跟踪、二维/三维医学图像分割、慢性病预测、声乐分离、智能合约与NFT<br>
-			</li>
+                <strong>2024年12月-2025年4月 多模态幻觉抑制框架CARE的研究与开发</strong><br>
+                项目简介：针对视觉语言模型(VLMs)在关键决策场景中的幻觉瓶颈问题，首创基于因果干预的生成溯源框架CARE，突破传统方法依赖重训练和缺乏可解释性的局限，实现无需模型微调的token级幻觉抑制，在LLaVA-1.5等主流模型上达成SOTA效果<br>
+                • <u>双路径因果机制设计</u>：构建事实/反事实并行解码路径，通过隐状态对比量化视觉依赖分数，创新性定义视觉依赖指数，实现token级幻觉溯源<br>
+                • <u>零训练优化引擎</u>：开发鲁棒四分位效应检测模块，采用加权中位数估计量结合动态阈值更新<br>
+                • <u>多基准验证体系</u>：构建POPE(random/popular/adversarial)+HallusionBench+MMHalBench三维评估矩阵，在LLaVA-1.5上实现幻觉率↓15%（MMHalBench）、QA准确率↑11.4%（ΔAcc），保持文本流畅性<br>
+                成果：提出首个基于因果干预的LVLM解码框架；在三大基准实现平均9%幻觉率降低；投稿 EMNLP 2025论文（在审）
+            </li>
+
+
+            <li>
+                <strong>2024年10月-2025年2月 大型视觉语言模型偏见抑制的因果干预机制研究</strong><br>
+                项目简介：针对视觉语言模型(VLMs)中的社会偏见问题，首创基于结构因果模型的动态干预框架，在无需微调的条件下实现跨模态偏见解耦，在LLaVA/Qwen等8个主流模型上实现最高32.69%的偏见降低和24.14%的幻觉抑制<br>
+                • <u>因果解耦理论突破</u>：建立跨模态可识别性定理，证明视觉因果变量V与文本因果变量W在隐空间的可分离性（满足V_c⊥⊥W_n条件），提出基于后门调整的混杂因子消除方案<br>
+                • <u>动态干预引擎</u>：设计跨模态注意力掩码机制阻断非因果路径，创新正交投影层消除职业-性别关联；结合鲁棒四分位检测实现token级干预<br>
+                • <u>多维度评估体系</u>：构建词频偏见率(WFBR)和CHAIR双指标评估框架，在FACET数据集27类职业图像上验证，LLaVA-1.5模型偏见率从-33.85%优化至-1.15%，CHAIR分数从33.85%降至9.71%<br>
+                成果：提出首个无需训练的LVLM动态干预框架；在8个主流模型实现平均20%+偏见降低；构建职业-性别偏见量化标准；投稿 ACM MM 2025论文（在审）
+            </li>
+
+            <li>
+                <strong>2023年8月-2024年12月 大型视觉语言模型在工业场景的行为识别研究</strong><br>
+                项目简介：与海尔家电拆解工厂合作，针对产品拆解效率与人员行为安全评估体系缺失问题，研发基于视觉语言模型的行为识别系统，实现拆解过程全链路智能监控与风险预警。<br>
+                • <u>亿级细粒度数据集构建</u>：基于工厂监控视频构建1.02亿图像-文本对数据集，覆盖安全装备检测（安全帽/手套）、6类拆解动作识别、家电部件计数、作业规范性评估、危险行为预警等场景；设计双通道标注流程（Gemini-Pro初筛+CVAT人工校验），开发自适应难例挖掘标注平台，领导8人团队完成数据清洗与质量验证（IAA=0.87）<br>
+                • <u>多模态预训练优化</u>：基于LLaVA-1.5架构，采用ViT-L/14@336px CLIP视觉编码器，设计两层MLP投影层实现跨模态特征融合；提出基于ℓ₁稀疏约束的模态对齐损失函数，结合LoRA微调策略（r=32, α=64）优化投影层参数，显著降低模态间隙（跨模态相似度提升18.7%）<br>
+                • <u>高效指令微调</u>：采用QLoRA技术（4-bit NF4量化）对LLaMA-7B语言模型微调，融合FlashAttention-2优化计算效率；在单卡RTX 4090实现全参数微调83%的精度（人工评估），训练吞吐量达1.2k tokens/s<br>
+                • <u>工业场景验证</u>：构建多维度评估框架（mAP@0.5安全检测/动作分类F1/风险预测AUC），通过GPT-4o自动评估（prompt-engineered）与专家抽检（2000样本）结合验证；落地后提升拆解效率52%（较原人工巡检流程），安全事故降低34%<br>
+                成果：授权专利《工业拆解场景的多模态行为识别方法及系统》（第一发明人，ZL202411685573.2）；行为识别模型F1-score达92.1%，端到端推理延迟＜400ms（RTX 4090 GPU）
+            </li>
+
 			
 		</ul>
 	</div>
@@ -100,32 +126,25 @@
 		<h2>个人技能</h2>
 		<ul>
 			<li>
-				华为昇思模型迁移。（https://github.com/zhaozhipeng1997/demucs_ascend910_pytorch）<br>
+				熟练掌握 Python、Java、C++、C、C# 等编程语言，掌握 PyTorch、TensorFlow、DeepSpeed、LLaMA Factory、Flash Attention-2 等深度学习框架及量化等加速技术。
 			</li>
 			<li>
-				大模型RAG知识库搭建：根据企业的需求定制向量数据库解决大模型“幻觉”问题。<br>
+				掌握 LLaMA、Qwen/Qwen-VL、DeepSeek/DeepSeek-VL、Phi、LLaVA 等大语言模型/视觉语言模型的原理与应用，熟练运用 LoRA/QLoRA、DPO、RLHF、Adapter 等微调方法，熟悉大模型参数配置及 RAG、Agent 等应用技术。
 			</li>
 			<li>
-				定制多模态大模型：提供一套完整的低成本微调多模态大模型的解决方案。<br>
+				熟悉 Transformer 原理及底层架构，掌握 CLIP、BLIP、CNN 等经典深度学习算法，熟悉 Linux 开发环境、常用指令及 Docker、Git 等工具。
 			</li>
 			<li>
-				基于Autodesk Revit软件的插件开发与定制。<br>
+				掌握 Ollama、vLLM 等大模型部署框架，熟悉 OpenWebUI 等大模型前端技术。
 			</li>
 			<li>
-				Android应用开发：基于Java或Kotlin熟练编写Android APP。<br>
+				掌握 NVIDIA 和昇腾平台深度学习实现与迁移方法，熟悉算子开发与迁移技术及深度学习优化技术。
 			</li>
 			<li>
-				鸿蒙应用开发与维护。<br>
+				掌握多领域开发能力：Autodesk Revit插件定制；Android/鸿蒙应用开发；中后台服务（基于.Net/Flask/Django）；WebRTC多平台实时音视频系统；智能合约开发。
 			</li>
-			<li>
-				中后台开发：使用C#，Java，Python等语言，基于.Net，Flask，Django等框架编写服务器API。<br>
-			</li>
-			<li>
-				实时音视频通信开发：基于WebRTC实现面向Web、Android、PC等多平台一对一和多对多实时音视频应用开发。<br>
-			</li>
-			<li>
-				熟练编写智能合约。<br>
-			</li>
+			
+			
 		</ul>
 	</div>
 
@@ -225,7 +244,7 @@
     <div id="footer">
         <div id="footer-text"></div>
     </div>
-    <center>© The last update is on 2024.4.12</center>
+    <center>© The last update is on 2025.6.22</center>
 </div>
 </body>
 </html>
