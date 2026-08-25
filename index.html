@@ -1,252 +1,194 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <link rel="shortcut icon" href="myIcon.ico">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>赵志鹏 · 简历 | Zhipeng Zhao</title>
+<style>
+  :root{
+    --ink:#0f172a;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --accent:#2563eb;
+    --accent-soft:#eff6ff;
+    --bg:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+    color:var(--ink);
+    background:#eef2f7;
+    line-height:1.4;
+    font-size:11.8px;
+  }
+  .page{
+    max-width:800px;
+    margin:16px auto;
+    background:var(--bg);
+    padding:18px 30px 10px;
+    box-shadow:0 1px 3px rgba(15,23,42,.08),0 10px 30px rgba(15,23,42,.06);
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
 
-    <!--	关键词-->
-    <meta name="keywords" content="Zhipeng Zhao, Zhao Zhipeng, Zhipeng, OUC, Ocean University of China">
-    <link rel="stylesheet" href="jemdoc.css" type="text/css">
-    <title>Zhipeng Zhao Homepage</title>
-</head>
+  header{text-align:center;margin-bottom:8px;}
+  header h1{font-size:24px;letter-spacing:1px;font-weight:800;}
+  header .en{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px;}
+  header .subtitle{margin-top:2px;font-size:12.6px;color:#334155;font-weight:600;}
+  header .subtitle2{margin-top:1px;font-size:11.6px;color:var(--muted);}
+  header .contacts{margin-top:4px;font-size:11.2px;color:var(--muted);}
+  header .objective{margin-top:5px;font-size:11.4px;color:#334155;text-align:left;border-left:3px solid var(--accent);padding-left:8px;background:#f8fafc;border-radius:0 3px 3px 0;padding-top:3px;padding-bottom:3px;}
+
+  section{margin-top:9px;}
+  h2{
+    font-size:13px;font-weight:800;letter-spacing:.5px;color:var(--ink);
+    display:flex;align-items:center;gap:6px;
+    border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:5px;
+  }
+  h2::before{content:"";width:4px;height:12px;background:var(--accent);border-radius:2px;}
+
+  .skill-group{margin-bottom:3.5px;}
+  .skill-group .label{display:inline-block;min-width:74px;color:var(--muted);font-weight:700;font-size:11px;vertical-align:top;}
+  .skill-group .items{display:inline;}
+  .chip{
+    display:inline-block;background:var(--accent-soft);color:#1d4ed8;border:1px solid #dbeafe;
+    border-radius:4px;padding:0 6px;margin:1px 2px 1px 0;font-size:10.6px;line-height:1.5;
+  }
+
+  .project{margin-bottom:6px;page-break-inside:avoid;}
+  .project-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+  .project-title{font-weight:800;font-size:12.4px;}
+  .project-meta{white-space:nowrap;font-size:10.6px;color:var(--muted);}
+  .badge{
+    display:inline-block;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;border-radius:4px;
+    padding:0 5px;font-size:9.8px;font-weight:700;margin-left:4px;vertical-align:1px;
+  }
+  .badge.blue{background:var(--accent-soft);color:#1d4ed8;border-color:#dbeafe;}
+  ul.bullets{list-style:none;}
+  ul.bullets li{position:relative;padding-left:12px;margin-bottom:1px;font-size:11.2px;color:#1e293b;}
+  ul.bullets li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:9.5px;top:1px;}
+
+  .pub{margin-bottom:2.5px;font-size:11.2px;color:#1e293b;}
+  .pub .authors{color:#334155;}
+  .pub .ptitle{font-weight:700;}
+  .pub .venue{color:var(--muted);}
+  .pub b{font-weight:800;}
+  .pub.others{font-size:10.2px;color:#475569;line-height:1.38;}
+
+  .edu{display:flex;justify-content:space-between;gap:8px;margin-bottom:2px;font-size:11.6px;}
+  .edu .left{color:#1e293b;}
+  .edu .left b{font-weight:700;}
+  .edu .date{color:var(--muted);white-space:nowrap;font-size:10.8px;}
+  .edu.note{font-size:10.8px;color:#475569;margin-top:2px;}
+
+  footer{margin-top:8px;text-align:center;font-size:9.8px;color:#94a3b8;}
+
+  @media print{
+    body{background:#fff;font-size:11.6px;}
+    .page{max-width:none;margin:0;padding:0;box-shadow:none;}
+    a{color:inherit;text-decoration:none;}
+    @page{size:A4;margin:8mm 11mm;}
+  }
+</style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T06XF4PTM4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-T06XF4PTM4');
 </script>
+</head>
 <body>
+<div class="page">
 
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-    <div id="layout-menu">
-        <a href="#course_introduction">教育背景</a>
-        <a href="#education_and_work_experience">获奖荣誉</a>
-        <a href="#research_direction">项目经历</a>
-		<a href="#individual_ability">个人技能</a>
-        <a href="#publications_and_patents">学术论文</a>
-        <a href="#research_project">参与课题</a>
-		<a href="#research_project">开发项目</a>
+  <header>
+    <h1>赵志鹏<span class="en">Zhipeng Zhao</span></h1>
+    <div class="subtitle">中国海洋大学 · 人工智能专业 · 博士在读（2023.08 – 至今）</div>
+    <div class="subtitle2">多模态大模型 · 视觉语言模型 · 可信AI · 因果推断</div>
+    <div class="contacts">
+      邮箱 zhaozhipeng@stu.ouc.edu.cn &nbsp;·&nbsp; 山东·青岛 &nbsp;·&nbsp;
+      <a href="https://github.com/zhaozhipeng1997">GitHub</a> &nbsp;·&nbsp;
+      <a href="https://www.zhihu.com/people/zzp_1">知乎</a>
     </div>
-</nav>
+    <div class="objective">求职方向：多模态算法工程师 / 大模型算法工程师 —— 以第一作者在 EMNLP 2026 录用 3 篇论文，具备大模型训练·微调·部署全链路能力与工业落地经验。</div>
+  </header>
 
-<div id="layout-content" style="margin-top:25px">
-    <table>
-        <tbody>
-        <tr>
-            <td width="670">
-                <div id="toptitle">
-                    <h1>赵志鹏</h1>
-                </div>
-                <p>
-                <h3>中国海洋大学人工智能专业全日制博士在读</h3>
-                所在学院：计算机科学与技术学院 <br>
-                籍贯：山东省 莒县人 <br>
-                </p>
-                <p>
-                    地址：山东省青岛市黄岛区三沙路1299号 <br>
-                    实验室：中国海洋大学西海岸校区信息南楼A314</br>
-                    电子邮箱: zhaozhipeng@stu.ouc.edu.cn</br>
-                </p>
-				<p>
-					<a href="https://github.com/zhaozhipeng1997"><img src="./pics/github.png" height="40px"></a>
-					<a href="https://www.zhihu.com/people/zzp_1"><img src="./pics/zhihu.png" height="40px"></a>
-				</p>
-            </td>
-            <td><img src="pics/zzp.JPG" border="0" height="250"><br></td>
-        <tr>
-        </tbody>
-    </table>
-	<div id="education">
-        <h2>教育背景</h2>
-        <ul>
-			<li>
-				2023.08~至今 中国海洋大学 信息科学与工程学部 人工智能专业 博士
-            </li>
-			<li>
-                2020.08~2023.06 中国海洋大学 信息科学与工程学部 计算机应用技术专业 硕士 <br>
-            </li>
-            <li>
-                2015.09~2019.06 青岛大学 机电工程学院 测控技术与仪器专业 本科<br>
-            </li>
-        </ul>
+  <section>
+    <h2>技术栈</h2>
+    <div class="skill-group"><span class="label">编程语言</span><span class="items"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">C#</span></span></div>
+    <div class="skill-group"><span class="label">深度学习</span><span class="items"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">DeepSpeed</span><span class="chip">FlashAttention-2</span><span class="chip">Transformers</span></span></div>
+    <div class="skill-group"><span class="label">大模型</span><span class="items"><span class="chip">LLaMA</span><span class="chip">Qwen/Qwen-VL</span><span class="chip">DeepSeek-VL</span><span class="chip">Phi</span><span class="chip">LLaVA</span><span class="chip">InternVL</span></span></div>
+    <div class="skill-group"><span class="label">微调/对齐</span><span class="items"><span class="chip">LoRA/QLoRA</span><span class="chip">SFT</span><span class="chip">DPO</span><span class="chip">RLHF</span><span class="chip">RAG</span><span class="chip">Agent</span></span></div>
+    <div class="skill-group"><span class="label">部署/平台</span><span class="items"><span class="chip">vLLM</span><span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">NVIDIA/昇腾</span></span></div>
+  </section>
+
+  <section>
+    <h2>核心项目经历</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">ViD：视觉语言模型性别偏见抑制</div>
+        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span></div>
+      </div>
+      <ul class="bullets">
+        <li>提出因果启发的“视觉主导”(V2L)跨模态注意力干预框架，通过后门调整抑制语言先验，无需微调即可嵌入现有 LVLM 推理流程，实现推理时性别偏见抑制。</li>
+        <li>在 FACET / MS COCO / FairFace / POPE / MMMU 多基准验证：FACET 单属性性别偏见降低 14.7%，LLaVA 在 MS COCO 公平性评分由 0.6708 提升至 0.9978，同时保持推理能力与文本质量。</li>
+      </ul>
     </div>
 
-    <div id="awards">
-        <h2>获奖荣誉</h2>
-        <ul>
-			<li>
-				2021.10 “建行杯”第七届山东省“互联网+”大学生创新创业大赛 铜奖 省级
-			</li>
-			<li>
-				2021.07 第七届“互联网+”大学生创新创业大赛 一等奖 校级
-			</li>
-            
-        </ul>
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">IntervNext：视觉语言模型机制级偏见诊断</div>
+        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/CARD-GenderBias">GitHub</a></div>
+      </div>
+      <ul class="bullets">
+        <li>提出基于因果中介分析的层级别激活替换诊断框架，将性别线索效应分解为各层激活的受控间接效应(AIE)与其余路径的直接效应，产出逐层“机制签名”，为精准干预提供依据。</li>
+        <li>覆盖 LLaVA-1.5 / LLaVA-NeXT / InstructBLIP(7B/13B) 及 MiniCPM-V / InternVL3.5 等 6 模型、3 类架构；发现语言层主导输出敏感度、架构决定层间分布、反事实与表面分数分歧，并实证诊断-干预仅弱相关(r=0.33)。</li>
+      </ul>
     </div>
-	<div id="research_direction">
-		<h2>项目经历</h2>
-		<ul>
-			<li>
-                <strong>2024年12月-2025年4月 多模态幻觉抑制框架CARE的研究与开发</strong><br>
-                项目简介：针对视觉语言模型(VLMs)在关键决策场景中的幻觉瓶颈问题，首创基于因果干预的生成溯源框架CARE，突破传统方法依赖重训练和缺乏可解释性的局限，实现无需模型微调的token级幻觉抑制，在LLaVA-1.5等主流模型上达成SOTA效果<br>
-                • <u>双路径因果机制设计</u>：构建事实/反事实并行解码路径，通过隐状态对比量化视觉依赖分数，创新性定义视觉依赖指数，实现token级幻觉溯源<br>
-                • <u>零训练优化引擎</u>：开发鲁棒四分位效应检测模块，采用加权中位数估计量结合动态阈值更新<br>
-                • <u>多基准验证体系</u>：构建POPE(random/popular/adversarial)+HallusionBench+MMHalBench三维评估矩阵，在LLaVA-1.5上实现幻觉率↓15%（MMHalBench）、QA准确率↑11.4%（ΔAcc），保持文本流畅性<br>
-                成果：提出首个基于因果干预的LVLM解码框架；在三大基准实现平均9%幻觉率降低；投稿 EMNLP 2025论文（在审）
-            </li>
 
-
-            <li>
-                <strong>2024年10月-2025年2月 大型视觉语言模型偏见抑制的因果干预机制研究</strong><br>
-                项目简介：针对视觉语言模型(VLMs)中的社会偏见问题，首创基于结构因果模型的动态干预框架，在无需微调的条件下实现跨模态偏见解耦，在LLaVA/Qwen等8个主流模型上实现最高32.69%的偏见降低和24.14%的幻觉抑制<br>
-                • <u>因果解耦理论突破</u>：建立跨模态可识别性定理，证明视觉因果变量V与文本因果变量W在隐空间的可分离性（满足V_c⊥⊥W_n条件），提出基于后门调整的混杂因子消除方案<br>
-                • <u>动态干预引擎</u>：设计跨模态注意力掩码机制阻断非因果路径，创新正交投影层消除职业-性别关联；结合鲁棒四分位检测实现token级干预<br>
-                • <u>多维度评估体系</u>：构建词频偏见率(WFBR)和CHAIR双指标评估框架，在FACET数据集27类职业图像上验证，LLaVA-1.5模型偏见率从-33.85%优化至-1.15%，CHAIR分数从33.85%降至9.71%<br>
-                成果：提出首个无需训练的LVLM动态干预框架；在8个主流模型实现平均20%+偏见降低；构建职业-性别偏见量化标准；投稿 ACM MM 2025论文（在审）
-            </li>
-
-            <li>
-                <strong>2023年8月-2024年12月 大型视觉语言模型在工业场景的行为识别研究</strong><br>
-                项目简介：与海尔家电拆解工厂合作，针对产品拆解效率与人员行为安全评估体系缺失问题，研发基于视觉语言模型的行为识别系统，实现拆解过程全链路智能监控与风险预警。<br>
-                • <u>亿级细粒度数据集构建</u>：基于工厂监控视频构建1.02亿图像-文本对数据集，覆盖安全装备检测（安全帽/手套）、6类拆解动作识别、家电部件计数、作业规范性评估、危险行为预警等场景；设计双通道标注流程（Gemini-Pro初筛+CVAT人工校验），开发自适应难例挖掘标注平台，领导8人团队完成数据清洗与质量验证<br>
-                • <u>多模态预训练优化</u>：基于LLaVA-1.5架构，采用ViT-L/14@336px CLIP视觉编码器，设计两层MLP投影层实现跨模态特征融合；提出基于ℓ₁稀疏约束的模态对齐损失函数，结合LoRA微调策略（r=32, α=64）优化投影层参数，显著降低模态间隙<br>
-                • <u>高效指令微调</u>：采用QLoRA技术（4-bit NF4量化）对LLaMA-7B语言模型微调，融合FlashAttention-2优化计算效率；在单卡RTX 4090实现全参数微调83%的精度（人工评估），训练吞吐量达1.2k tokens/s<br>
-                • <u>工业场景验证</u>：构建多维度评估框架（mAP@0.5安全检测/动作分类F1/风险预测AUC），通过GPT-4o自动评估（prompt-engineered）与专家抽检（2000样本）结合验证；落地后提升拆解效率52%（较原人工巡检流程），安全事故降低34%<br>
-                成果：已受理专利《一种电器拆解过程人员行为识别模型训练及行为识别方法及系统》（第一发明人，202411685573.2）；行为识别模型F1-score达92.1%，端到端推理延迟＜400ms（RTX 4090 GPU）
-            </li>
-
-			
-		</ul>
-	</div>
-	<div id="individual_ability">
-		<h2>个人技能</h2>
-		<ul>
-			<li>
-				熟练掌握 Python、Java、C++、C、C# 等编程语言，掌握 PyTorch、TensorFlow、DeepSpeed、LLaMA Factory、Flash Attention-2 等深度学习框架及量化等加速技术。
-			</li>
-			<li>
-				掌握 LLaMA、Qwen/Qwen-VL、DeepSeek/DeepSeek-VL、Phi、LLaVA 等大语言模型/视觉语言模型的原理与应用，熟练运用 LoRA/QLoRA、DPO、RLHF、Adapter 等微调方法，熟悉大模型参数配置及 RAG、Agent 等应用技术。
-			</li>
-			<li>
-				熟悉 Transformer 原理及底层架构，掌握 CLIP、BLIP、CNN 等经典深度学习算法，熟悉 Linux 开发环境、常用指令及 Docker、Git 等工具。
-			</li>
-			<li>
-				掌握 Ollama、vLLM 等大模型部署框架，熟悉 OpenWebUI 等大模型前端技术。
-			</li>
-			<li>
-				掌握 NVIDIA 和昇腾平台深度学习实现与迁移方法，熟悉算子开发与迁移技术及深度学习优化技术。
-			</li>
-			<li>
-				掌握多领域开发能力：Autodesk Revit插件定制；Android/鸿蒙应用开发；中后台服务（基于.Net/Flask/Django）；WebRTC多平台实时音视频系统；智能合约开发。
-			</li>
-			
-			
-		</ul>
-	</div>
-
-    
-	<div id="academic_papers">
-		<h2>学术论文</h2>
-		<ul>
-			<li>
-				<b>Zhao Zhipeng</b>, Liu Peishun, Zhai Yili, Wei Zhaoqiang, Tang Ruichun.<br>
-				Controllable Causal Disentanglement Theory for Large Visual-Language Models: From Latent Confusions to Intervention Strategies[C].<br>
-				<em>ACM MM 2025</em>. Under Review<br>
-			</li>
-			<li>
-				<b>Zhao Zhipeng</b>, Liu Peishun, Zhai Yili, Wei Zhaoqiang, Zhao Youwei, Tang Ruichun.<br>
-				CARE: Causal-Aware Robust Estimation for Hallucination Mitigation in Large Vision Language Models[C].<br>
-				<em>EMNLP 2025</em>. Under Review<br>
-			</li>
-			<li>
-				<b>Zhao Zhipeng</b>, He Jiawen, Tang Ruichun, Liu Peishun, Zhao Youwei.<br>
-				Sin OC-SORT: Multi-object tracking by re-correct the equations of motion[C].<br>
-				<em>The 6th International Conference on Machine Learning and Machine Intelligence</em> (MLMI 2023).ACM International Conference Proceeding Series,2023.100-105.(EI:20240515471694)<br>
-			</li>
-			<li>
-				<b>Zhao Zhipeng</b>, Zhang Jianjun, Liu Peishun, Liu Hanqing, Chen Yixin, Li Charles, Liu Xianchang, Tang Ruichun.<br>
-				Semi-supervised 3D medical image segmentation using Transformer and CNN[C].<br>
-				<em>The 15th International Conference on Digital Image Processing</em> (ICDIP 2023). ACM International Conference Proceeding Series, 2023.(EI:20235115251218)<br>
-			</li>
-			<li>
-				Jianjun Zhang, <b>Zhao Zhipeng</b>, Yixin Chen, Hanqing Liu.<br>
-				Multi-Decoder Networks for Semi-Supervised Medical Image Segmentation[C].<br>
-				<em>The 15th International Conference on Digital Image Processing</em> (ICDIP 2023). ACM International Conference Proceeding Series, 2023.(EI:20235115251210)<br>
-			</li>
-			<li>
-				Chen Yixin, Zhang Jianjun, Zong Xulin, <b>Zhao Zhipeng</b>, Liu Hanqing, Tang Ruichun, Liu Peishun, Wang Jinyu.<br>
-				FSC-UNet: a lightweight medical image segmentation algorithm fused with skip connections[C].<br>
-				<em>Fourteenth International Conference on Digital Image Processing</em> (ICDIP 2022). Proceedings of SPIE - The International Society for Optical Engineering, 2022, 12342: 408-416.(EI:20224613131363)<br>
-			</li>
-			<li>
-				Liu Hanqing, <b>Zhao Zhipeng</b>, Tang Ruichun, Liu Peishun, Chenyixin, Zhang Jianjun, Jia Jing.<br>
-				PDNet: an advanced architecture for polyp image segmentation[C].<br>
-				<em>Fourteenth International Conference on Digital Image Processing</em> (ICDIP 2022). Proceedings of SPIE - The International Society for Optical Engineering, 2022, 12342: 434-442.(EI:20224613131366)<br>
-			</li>
-			<li>
-				Jilin Chen, Shilong An, <b>Zhipeng Zhao</b>, Huafeng Xue and Ruichun Tang.<br>
-				Enhanced Interactive Understanding for Human-Object Interaction Detection[C].<br>
-				<em>2024 the 9th International Conference on Cloud Computing and Big Data Analytics </em> (ICCCBDA 2024). 9th International Conference on Cloud Computing and Big Data Analytics, 2024, 329-335.(EI:20242916699429)<br>
-			</li>
-		</ul>
-	</div>
-    <div id="research_project">
-        <h2>参与课题</h2>
-        <ul>
-            <li>
-				主要参与“数据驱动的家电产品精益拆解与循环协同”， 国家重点研发计划<br>
-				2022YFB3305803，2022.10~2025.10，在研<br>
-            </li>
-			<li>
-				主要参与“多业务多网络融合通信调度关键技术研究与综合指挥应急调度系统实现”，国家重点研发计划<br>
-				2017YFC0806205，2017.7~2020.6，已结题<br>
-			</li>
-			<li>
-				主要参与“医疗大数据应用“，横向课题<br>
-				2016.1~2018.12，已结题<br>
-			</li>
-			<li>
-				主要承担“海川建筑物碳排放计算软件研发”，横向课题<br>
-				2024.01~2024.03，结题<br>
-			</li>
-			<li>
-				主要参与“基于5G面向基站的物联网能耗控制器”，横向课题<br>
-				2022.12~2024.12，结题<br>
-			</li>
-            
-		</ul>
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">SAFE：视觉语言模型幻觉诊断与抑制</div>
+        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/SAFE_public">GitHub</a></div>
+      </div>
+      <ul class="bullets">
+        <li>提出免训练的对比解码框架 SAFE，通过“有视觉/去视觉”双路生成得到 token 级视觉依赖分数，用于幻觉定位与解码时惩罚，无需重训练即可部署。</li>
+        <li>在 LLaVA-1.5 / InstructBLIP / Shikra 与 MMHalBench / POPE / HallusionBench / CHAIR / MMMU 五基准上验证，MMHalBench 显著超越全部基线；并揭示视觉依赖随生成衰减、幻觉时间聚集、早期干预可抑制聚集等机理。</li>
+      </ul>
     </div>
-	<div id="development_projects">
-        <h2>开发项目</h2>
-        <ul>
-			<li>
-				基于智能合约与K歌的系统开发<br>
-				2023启动，开发中<br>
-			</li>
-            <li>
-				基于P2P的无服务器架构音视频通信安卓系统开发<br>
-				2020启动，已完成<br>
-            </li>
-			<li>
-				易货贸易系统安卓端开发（ebarter）<br>
-				2020启动，已完成<br>
-			</li>
-			<li>
-				面向水果销售的安卓端开发（realyfresh）<br>
-				2020启动<br>
-			</li>
-		</ul>
-    </div>
-	
 
-    <div id="footer">
-        <div id="footer-text"></div>
+    <div class="project">
+      <div class="project-head">
+        <div class="project-title">一种电器拆解过程人员行为识别模型训练及行为识别方法及系统</div>
+        <div class="project-meta">2023.08–2024.12 · 第一发明人<span class="badge blue">发明专利</span></div>
+      </div>
+      <ul class="bullets">
+        <li>基于海尔工厂监控构建 1.02 亿图像-文本对数据集，覆盖安全装备检测、6 类拆解动作识别与危险行为预警，带领 8 人团队完成数据质检。</li>
+        <li>基于 LLaVA-1.5 设计 LoRA/QLoRA(4-bit)+FlashAttention-2 微调方案（单卡 RTX 4090 达全参微调 83% 精度）；落地后拆解效率 +52%、事故 -34%。申请号 2024116855732，公布号 CN119919993A（2024.11）。</li>
+      </ul>
     </div>
-    <center>© The last update is on 2025.6.22</center>
+  </section>
+
+  <section>
+    <h2>学术论文</h2>
+    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wei Zhaoqiang, Liu Peishun, Zhao Youwei, Tang Ruichun（通讯作者）.</span> <span class="ptitle">ViD: Vision-Dominant Gender Bias Mitigation for Large Vision-Language Models</span>. <span class="venue">EMNLP 2026（已录用）</span>.</div>
+    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wang Wenxu, Liu Peishun, Tang Ruichun（通讯作者）.</span> <span class="ptitle">Mechanism-Level Evaluation for Vision-Language Models: Controlled Activation-Replacement Diagnosis of Gender Bias</span>. <span class="venue">EMNLP 2026（已录用）</span>. <a href="https://github.com/zhaozhipeng1997/CARD-GenderBias">GitHub</a></div>
+    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wang Wenxu, Liu Peishun, Tang Ruichun（通讯作者）.</span> <span class="ptitle">What Do Hallucinations Reveal About Multimodal Reasoning? Diagnosing Visual Grounding Failures via Contrastive Decoding Probes</span>. <span class="venue">EMNLP 2026（已录用）</span>. <a href="https://github.com/zhaozhipeng1997/SAFE_public">GitHub</a></div>
+    <div class="pub others"><b>其他论文（EI 收录）</b>：<span class="authors"><b>Zhao Zhipeng</b>, He Jiawen, et al.</span> Sin OC-SORT: Multi-object tracking by re-correct the equations of motion (MLMI 2023)；<span class="authors"><b>Zhao Zhipeng</b>, Zhang Jianjun, et al.</span> Semi-supervised 3D medical image segmentation using Transformer and CNN (ICDIP 2023)；<span class="authors">Jianjun Zhang, <b>Zhao Zhipeng</b>, et al.</span> Multi-Decoder Networks for Semi-Supervised Medical Image Segmentation (ICDIP 2023)；<span class="authors">Chen Yixin, Zhang Jianjun, Zong Xulin, <b>Zhao Zhipeng</b>, et al.</span> FSC-UNet: a lightweight medical image segmentation algorithm fused with skip connections (ICDIP 2022)；<span class="authors">Liu Hanqing, <b>Zhao Zhipeng</b>, et al.</span> PDNet: an advanced architecture for polyp image segmentation (ICDIP 2022)；<span class="authors">Jilin Chen, Shilong An, <b>Zhipeng Zhao</b>, et al.</span> Enhanced Interactive Understanding for Human-Object Interaction Detection (ICCCBDA 2024)。</div>
+  </section>
+
+  <section>
+    <h2>教育背景与荣誉</h2>
+    <div class="edu"><div class="left"><b>中国海洋大学</b> · 人工智能专业（信息科学与工程学部） · 博士</div><div class="date">2023.08 – 至今</div></div>
+    <div class="edu"><div class="left"><b>中国海洋大学</b> · 计算机应用技术专业 · 硕士</div><div class="date">2020.08 – 2023.06</div></div>
+    <div class="edu"><div class="left"><b>青岛大学</b> · 测控技术与仪器专业 · 本科</div><div class="date">2015.09 – 2019.06</div></div>
+    <div class="edu note">荣誉：“建行杯”第七届山东省“互联网+”大学生创新创业大赛铜奖（省级，2021）；主要参与国家重点研发计划 2022YFB3305803 等 5 项课题。</div>
+  </section>
+
+  <footer>更新于 2026.08</footer>
 </div>
 </body>
 </html>
