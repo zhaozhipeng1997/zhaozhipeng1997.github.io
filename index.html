@@ -32,13 +32,21 @@
   a{color:var(--accent);text-decoration:none;}
   a:hover{text-decoration:underline;}
 
-  header{text-align:center;margin-bottom:8px;}
+  header{position:relative;text-align:center;margin-bottom:8px;}
   header h1{font-size:24px;letter-spacing:1px;font-weight:800;}
   header .en{font-size:13px;color:var(--muted);font-weight:500;margin-left:6px;}
   header .subtitle{margin-top:2px;font-size:12.6px;color:#334155;font-weight:600;}
   header .subtitle2{margin-top:1px;font-size:11.6px;color:var(--muted);}
   header .contacts{margin-top:4px;font-size:11.2px;color:var(--muted);}
   header .objective{margin-top:5px;font-size:11.4px;color:#334155;text-align:left;border-left:3px solid var(--accent);padding-left:8px;background:#f8fafc;border-radius:0 3px 3px 0;padding-top:3px;padding-bottom:3px;}
+  header .photo{
+    position:absolute;top:0;right:0;
+    width:78px;height:104px;
+    object-fit:cover;object-position:top;
+    border:1px solid var(--line);
+    border-radius:6px;
+    box-shadow:0 1px 4px rgba(15,23,42,.12);
+  }
 
   section{margin-top:9px;}
   h2{
@@ -48,14 +56,9 @@
   }
   h2::before{content:"";width:4px;height:12px;background:var(--accent);border-radius:2px;}
 
-  .skill-group{margin-bottom:3.5px;}
-  .skill-group .label{display:inline-block;min-width:74px;color:var(--muted);font-weight:700;font-size:11px;vertical-align:top;}
-  .skill-group .items{display:inline;}
-  .chip{
-    display:inline-block;background:var(--accent-soft);color:#1d4ed8;border:1px solid #dbeafe;
-    border-radius:4px;padding:0 6px;margin:1px 2px 1px 0;font-size:10.6px;line-height:1.5;
-  }
-
+  .flow-row{margin-bottom:2px;font-size:11px;}
+  .flow-row .flow-item{display:inline-block;margin-right:18px;vertical-align:top;}
+  .flow-row b{color:var(--muted);font-weight:700;}
   .project{margin-bottom:6px;page-break-inside:avoid;}
   .project-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
   .project-title{font-weight:800;font-size:12.4px;}
@@ -70,17 +73,12 @@
   ul.bullets li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:9.5px;top:1px;}
 
   .pub{margin-bottom:2.5px;font-size:11.2px;color:#1e293b;}
+  .pub .refnum{color:var(--accent);font-weight:700;margin-right:2px;}
   .pub .authors{color:#334155;}
   .pub .ptitle{font-weight:700;}
   .pub .venue{color:var(--muted);}
   .pub b{font-weight:800;}
   .pub.others{font-size:10.2px;color:#475569;line-height:1.38;}
-
-  .edu{display:flex;justify-content:space-between;gap:8px;margin-bottom:2px;font-size:11.6px;}
-  .edu .left{color:#1e293b;}
-  .edu .left b{font-weight:700;}
-  .edu .date{color:var(--muted);white-space:nowrap;font-size:10.8px;}
-  .edu.note{font-size:10.8px;color:#475569;margin-top:2px;}
 
   footer{margin-top:8px;text-align:center;font-size:9.8px;color:#94a3b8;}
 
@@ -89,6 +87,9 @@
     .page{max-width:none;margin:0;padding:0;box-shadow:none;}
     a{color:inherit;text-decoration:none;}
     @page{size:A4;margin:8mm 11mm;}
+  }
+  @media (max-width:560px){
+    header .photo{position:static;display:block;margin:0 auto 8px;}
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -104,33 +105,50 @@
 <div class="page">
 
   <header>
+    <img class="photo" src="pics/zzp.JPG" alt="赵志鹏">
     <h1>赵志鹏<span class="en">Zhipeng Zhao</span></h1>
-    <div class="subtitle">中国海洋大学 · 人工智能专业 · 博士在读（2023.08 – 至今）</div>
     <div class="subtitle2">多模态大模型 · 视觉语言模型 · 可信AI · 因果推断</div>
     <div class="contacts">
-      邮箱 zhaozhipeng@stu.ouc.edu.cn &nbsp;·&nbsp; 山东·青岛 &nbsp;·&nbsp;
+      邮箱 zhaozhipeng@stu.ouc.edu.cn &nbsp;·&nbsp; 电话 17806246256 &nbsp;·&nbsp;
       <a href="https://github.com/zhaozhipeng1997">GitHub</a> &nbsp;·&nbsp;
       <a href="https://www.zhihu.com/people/zzp_1">知乎</a>
     </div>
-    <div class="objective">求职方向：多模态算法工程师 / 大模型算法工程师 —— 以第一作者在 EMNLP 2026 录用 3 篇论文，具备大模型训练·微调·部署全链路能力与工业落地经验。</div>
   </header>
 
   <section>
-    <h2>技术栈</h2>
-    <div class="skill-group"><span class="label">编程语言</span><span class="items"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">C#</span></span></div>
-    <div class="skill-group"><span class="label">深度学习</span><span class="items"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">DeepSpeed</span><span class="chip">FlashAttention-2</span><span class="chip">Transformers</span></span></div>
-    <div class="skill-group"><span class="label">大模型</span><span class="items"><span class="chip">LLaMA</span><span class="chip">Qwen/Qwen-VL</span><span class="chip">DeepSeek-VL</span><span class="chip">Phi</span><span class="chip">LLaVA</span><span class="chip">InternVL</span></span></div>
-    <div class="skill-group"><span class="label">微调/对齐</span><span class="items"><span class="chip">LoRA/QLoRA</span><span class="chip">SFT</span><span class="chip">DPO</span><span class="chip">RLHF</span><span class="chip">RAG</span><span class="chip">Agent</span></span></div>
-    <div class="skill-group"><span class="label">部署/平台</span><span class="items"><span class="chip">vLLM</span><span class="chip">Ollama</span><span class="chip">Docker</span><span class="chip">Linux</span><span class="chip">NVIDIA/昇腾</span></span></div>
+    <h2>教育背景与荣誉</h2>
+    <div class="flow-row">
+      <span class="flow-item"><b>博士</b>：中国海洋大学 · 人工智能专业（信息科学与工程学部） · 2023.08 – 至今</span>
+      <span class="flow-item"><b>硕士</b>：中国海洋大学 · 计算机应用技术专业 · 2020.08 – 2023.06</span>
+      <span class="flow-item"><b>本科</b>：青岛大学 · 测控技术与仪器专业 · 2015.09 – 2019.06</span>
+    </div>
+    <div class="flow-row">
+      <span class="flow-item"><b>出生年月</b>：1997.04</span>
+      <span class="flow-item"><b>荣誉</b>：“建行杯”第七届山东省“互联网+”大学生创新创业大赛铜奖（省级，2021）；参与国家重点研发计划 2022YFB3305803 等 5 项课题。</span>
+      <span class="flow-item"><b>审稿人</b>：AAAI、NeurIPS、ACM MM、ACL、EMNLP</span>
+    </div>
   </section>
 
   <section>
-    <h2>核心项目经历</h2>
+    <h2>技术栈</h2>
+    <div class="flow-row">
+      <span class="flow-item"><b>编程语言</b>：Python · C++ · Java · C#</span>
+      <span class="flow-item"><b>深度学习</b>：PyTorch · TensorFlow · DeepSpeed · FlashAttention-2 · Transformers</span>
+      <span class="flow-item"><b>大模型</b>：LLaMA · Qwen/Qwen-VL · DeepSeek-VL · Phi · LLaVA · InternVL</span>
+    </div>
+    <div class="flow-row">
+      <span class="flow-item"><b>微调/对齐</b>：LoRA/QLoRA · SFT · DPO · RLHF · RAG · Agent</span>
+      <span class="flow-item"><b>部署/平台</b>：vLLM · Ollama · Docker · Linux · NVIDIA/昇腾</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>研究成果</h2>
 
     <div class="project">
       <div class="project-head">
         <div class="project-title">ViD：视觉语言模型性别偏见抑制</div>
-        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span></div>
+        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/ViD_public_code">GitHub</a></div>
       </div>
       <ul class="bullets">
         <li>提出因果启发的“视觉主导”(V2L)跨模态注意力干预框架，通过后门调整抑制语言先验，无需微调即可嵌入现有 LVLM 推理流程，实现推理时性别偏见抑制。</li>
@@ -174,18 +192,12 @@
 
   <section>
     <h2>学术论文</h2>
-    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wei Zhaoqiang, Liu Peishun, Zhao Youwei, Tang Ruichun（通讯作者）.</span> <span class="ptitle">ViD: Vision-Dominant Gender Bias Mitigation for Large Vision-Language Models</span>. <span class="venue">EMNLP 2026（已录用）</span>.</div>
-    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wang Wenxu, Liu Peishun, Tang Ruichun（通讯作者）.</span> <span class="ptitle">Mechanism-Level Evaluation for Vision-Language Models: Controlled Activation-Replacement Diagnosis of Gender Bias</span>. <span class="venue">EMNLP 2026（已录用）</span>. <a href="https://github.com/zhaozhipeng1997/CARD-GenderBias">GitHub</a></div>
-    <div class="pub"><span class="authors"><b>Zhao Zhipeng</b>, Wang Wenxu, Liu Peishun, Tang Ruichun（通讯作者）.</span> <span class="ptitle">What Do Hallucinations Reveal About Multimodal Reasoning? Diagnosing Visual Grounding Failures via Contrastive Decoding Probes</span>. <span class="venue">EMNLP 2026（已录用）</span>. <a href="https://github.com/zhaozhipeng1997/SAFE_public">GitHub</a></div>
-    <div class="pub others"><b>其他论文（EI 收录）</b>：<span class="authors"><b>Zhao Zhipeng</b>, He Jiawen, et al.</span> Sin OC-SORT: Multi-object tracking by re-correct the equations of motion (MLMI 2023)；<span class="authors"><b>Zhao Zhipeng</b>, Zhang Jianjun, et al.</span> Semi-supervised 3D medical image segmentation using Transformer and CNN (ICDIP 2023)；<span class="authors">Jianjun Zhang, <b>Zhao Zhipeng</b>, et al.</span> Multi-Decoder Networks for Semi-Supervised Medical Image Segmentation (ICDIP 2023)；<span class="authors">Chen Yixin, Zhang Jianjun, Zong Xulin, <b>Zhao Zhipeng</b>, et al.</span> FSC-UNet: a lightweight medical image segmentation algorithm fused with skip connections (ICDIP 2022)；<span class="authors">Liu Hanqing, <b>Zhao Zhipeng</b>, et al.</span> PDNet: an advanced architecture for polyp image segmentation (ICDIP 2022)；<span class="authors">Jilin Chen, Shilong An, <b>Zhipeng Zhao</b>, et al.</span> Enhanced Interactive Understanding for Human-Object Interaction Detection (ICCCBDA 2024)。</div>
-  </section>
+    <div class="pub"><span class="refnum">[1]</span> <span class="authors"><b>Zhao Zhipeng</b>（第一作者）.</span> <span class="ptitle">ViD: Vision-Dominant Gender Bias Mitigation for Large Vision-Language Models</span>. <span class="venue">EMNLP 2026（已录用，NLP 领域顶级学术会议，CCF-B / Core A*）</span>. </div>
+    <div class="pub"><span class="refnum">[2]</span> <span class="authors"><b>Zhao Zhipeng</b>（第一作者）.</span> <span class="ptitle">Mechanism-Level Evaluation for Vision-Language Models: Controlled Activation-Replacement Diagnosis of Gender Bias</span>. <span class="venue">EMNLP 2026（已录用，NLP 领域顶级学术会议，CCF-B / Core A*）</span>. </div>
+    <div class="pub"><span class="refnum">[3]</span> <span class="authors"><b>Zhao Zhipeng</b>（第一作者）.</span> <span class="ptitle">What Do Hallucinations Reveal About Multimodal Reasoning? Diagnosing Visual Grounding Failures via Contrastive Decoding Probes</span>. <span class="venue">EMNLP 2026（已录用，NLP 领域顶级学术会议，CCF-B / Core A*）</span>. </div>
+    <div class="pub others"><b>IEEE TMM 在投（均为第一作者）</b>：<span class="refnum">[4]</span> DUAL-Parallel: Parallel Relative Uncertainty Comparison for Visual Grounding under Conflicting Gender Prompts in Vision-Language Models；<span class="refnum">[5]</span> IntervMed-Bias: Component-Level Diagnostic Evaluation of Gender Sensitivity in Large Vision-Language Models via Intervention Perturbation Analysis；<span class="refnum">[6]</span> Temporal Decay of Visual Grounding as a Safety Indicator for Vision-Language Model Deployment；<span class="refnum">[7]</span> Encoding or Arbitration: A Mechanistic Taxonomy of Hallucination Failure Modes for Safe Vision-Language Systems。</div>
+    <div class="pub others"><b>AAAI 在投（均为第一作者）</b>：<span class="refnum">[8]</span> Diagnostic Signals for Visual Grounding via Counterfactual Perturbation in Vision-Language Models；<span class="refnum">[9]</span> When Shorter Answers Mask Unsafe Behavior: A Length-Normalized Re-Evaluation of Hallucination Benchmarks for AI Alignment。</div>
 
-  <section>
-    <h2>教育背景与荣誉</h2>
-    <div class="edu"><div class="left"><b>中国海洋大学</b> · 人工智能专业（信息科学与工程学部） · 博士</div><div class="date">2023.08 – 至今</div></div>
-    <div class="edu"><div class="left"><b>中国海洋大学</b> · 计算机应用技术专业 · 硕士</div><div class="date">2020.08 – 2023.06</div></div>
-    <div class="edu"><div class="left"><b>青岛大学</b> · 测控技术与仪器专业 · 本科</div><div class="date">2015.09 – 2019.06</div></div>
-    <div class="edu note">荣誉：“建行杯”第七届山东省“互联网+”大学生创新创业大赛铜奖（省级，2021）；主要参与国家重点研发计划 2022YFB3305803 等 5 项课题。</div>
   </section>
 
   <footer>更新于 2026.08</footer>
