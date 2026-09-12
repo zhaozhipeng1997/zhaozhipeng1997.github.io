@@ -86,13 +86,14 @@
     background:var(--accent);color:#fff;border:none;
     border-radius:20px;padding:8px 16px;font-size:12px;cursor:pointer;
     box-shadow:0 2px 8px rgba(37,99,235,.35);
+    text-decoration:none;
   }
-  .export-btn:hover{background:#1d4ed8;}
+  .export-btn:hover{background:#1d4ed8;text-decoration:none;}
 
   @media print{
     body{background:#fff;font-size:11.6px;}
     .page{max-width:none;margin:0;padding:0;box-shadow:none;}
-    a{color:inherit;text-decoration:none;}
+    a{color:var(--accent);text-decoration:none;}
     .export-btn{display:none;}
     @page{size:A4;margin:8mm 11mm;}
   }
@@ -142,7 +143,7 @@
     <h2>技术栈</h2>
     <div class="flow-row">
       <span class="flow-item"><b>编程语言</b>：Python · C++ · Java · C#</span>
-      <span class="flow-item"><b>深度学习</b>：PyTorch · DeepSpeed · FlashAttention-2 · Transformers</span>
+      <span class="flow-item"><b>深度学习</b>：PyTorch · DeepSpeed · FlashAttention-2 · Token Merging · Transformers</span>
       <span class="flow-item"><b>大模型</b>：LLaMA · Qwen/Qwen-VL · DeepSeek-VL · Phi · LLaVA · InternVL</span>
     </div>
     <div class="flow-row">
@@ -157,7 +158,7 @@
     <div class="project">
       <div class="project-head">
         <div class="project-title">ViD：视觉语言模型性别偏见抑制</div>
-        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/ViD_public_code">GitHub</a></div>
+        <div class="project-meta">2023.08–2024.08 · 第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/ViD_public_code">GitHub</a></div>
       </div>
       <ul class="bullets">
         <li>提出因果启发的“视觉主导”(V2L)跨模态注意力干预框架，通过后门调整抑制语言先验，无需微调即可嵌入现有 LVLM 推理流程，实现推理时性别偏见抑制。</li>
@@ -168,7 +169,7 @@
     <div class="project">
       <div class="project-head">
         <div class="project-title">IntervNext：视觉语言模型机制级偏见诊断</div>
-        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/CARD-GenderBias">GitHub</a></div>
+        <div class="project-meta">2024.01–2025.01 · 第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/CARD-GenderBias">GitHub</a></div>
       </div>
       <ul class="bullets">
         <li>提出基于因果中介分析的层级别激活替换诊断框架，将性别线索效应分解为各层激活的受控间接效应(AIE)与其余路径的直接效应，产出逐层“机制签名”，为精准干预提供依据。</li>
@@ -179,7 +180,7 @@
     <div class="project">
       <div class="project-head">
         <div class="project-title">SAFE：视觉语言模型幻觉诊断与抑制</div>
-        <div class="project-meta">第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/SAFE_public">GitHub</a></div>
+        <div class="project-meta">2025.01–2026.01 · 第一作者<span class="badge">EMNLP 2026</span> · <a href="https://github.com/zhaozhipeng1997/SAFE_public">GitHub</a></div>
       </div>
       <ul class="bullets">
         <li>提出免训练的对比解码框架 SAFE，通过“有视觉/去视觉”双路生成得到 token 级视觉依赖分数，用于幻觉定位与解码时惩罚，无需重训练即可部署。</li>
@@ -201,7 +202,7 @@
     <div class="project">
       <div class="project-head">
         <div class="project-title">demucs_ascend910_pytorch：Demucs 音乐源分离模型昇腾 910 适配</div>
-        <div class="project-meta"><a href="https://github.com/zhaozhipeng1997/demucs_ascend910_pytorch">GitHub</a> · 9 Stars</div>
+        <div class="project-meta">2023.08–2023.09 · <a href="https://github.com/zhaozhipeng1997/demucs_ascend910_pytorch">GitHub</a> · 9 Stars</div>
       </div>
       <ul class="bullets">
         <li>将 Meta 开源 Demucs（Hybrid Transformer 音乐源分离模型）适配至华为昇腾 910（NPU）的开源 PyTorch 实现，仓库获 9 个 star。</li>
